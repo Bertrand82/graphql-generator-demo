@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: bg 
+  profiles:
+    active: dev
+  data:
+    rest:
+      basePath: /api2   
+    admin:
+      basePath: /admin2   
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+ 
+    
+server:
+  port: 8080
+   
+---
+
+spring:
+  profiles: dev
+  jpa:    
+     show-sql: true    
+  
+app:
+  db: 
+    url: jdbc:mariadb://host.docker.internal:3306/databasebg3?user=root&password=bg
+  ldap: 
+    active: false  
+    url: ldap://localhost:10389/dc=agr82,dc=com  
+  client:
+    url: http://localhost:4200
+  
+logging:
+  level: 
+    root: info
+
+---
+
+   
+  

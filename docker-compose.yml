@@ -1,0 +1,32 @@
+version: '3'
+services:
+  docker-mysql:
+    restart: always
+    container_name: docker-mysql
+    image: mysql
+    environment:
+      MYSQL_DATABASE: databasebg3
+      MYSQL_ROOT_PASSWORD: bg
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: bg
+      MYSQL_PASSWORD: bg
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "6033:3306"
+    healthcheck:
+      test: "/usr/bin/mysql --user=root --password=bg --execute \"SHOW DATABASES;\""
+      interval: 2s
+      timeout: 20s
+      retries: 10
+  graphql-generator-demo:
+    restart: on-failure
+    build: ./
+    expose:
+      - "10222"
+    ports:
+      - 8080:8080
+    environment:
+      WAIT_HOSTS: mysql:3306
+    depends_on:
+      - docker-mysql

@@ -25,7 +25,7 @@ spring:
   
 app:
   db: 
-    url: jdbc:mariadb://host.docker.internal:3306/databasebg3?user=root&password=bg
+    url: jdbc:mariadb://docker-mysql:3306/databasebg3?user=root&password=bg&useSSL=false&allowPublicKeyRetrieval=true
   ldap: 
     active: false  
     url: ldap://localhost:10389/dc=agr82,dc=com  

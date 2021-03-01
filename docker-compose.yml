@@ -21,6 +21,7 @@ services:
       retries: 10
   graphql-generator-demo:
     restart: on-failure
+    image: bertrand82/essai_temp:v000
     build: ./
     expose:
       - "10222"

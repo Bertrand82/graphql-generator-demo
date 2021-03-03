@@ -1,8 +1,8 @@
 # graphql-generator-demo
-Demo : Génération d'une appli web fonctionnelle générée à  partir d'un graphql
-Le fichier gphql est visible:
+* Demo : Génération d'une appli web fonctionnelle générée à  partir d'un graphql
+* Le fichier gphql est visible ici:
 /graphql-generator/src/main/resources/schema/schema.graphqls
-Usage du plugin Maven 	bg.graphql.tool:graphql-generator-maven-plugin
+* Usage du plugin Maven 	bg.graphql.tool:graphql-generator-maven-plugin
 
 # start:
 * run : bg.demo.Application

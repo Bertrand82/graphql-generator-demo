@@ -1,6 +1,7 @@
 package bg.demo;
 
 import java.util.Arrays;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -14,6 +15,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
+import bg.graphql.tool.GenerateModelRepositoryControllerFromGraphQL;
+
 
 
 
@@ -26,11 +29,14 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 public class Application implements WebSocketMessageBrokerConfigurer {
 
 	
-	
+	private static Logger logger = Logger.getLogger(Application.class.getName());
+
+
 	
 	
 	public static void main(String[] args) {
 		System.err.println("Demo Start");
+		logger.info("DemoStart");
 		SpringApplication springApplication = new SpringApplicationBuilder(Application.class)
 				.properties(getProperties())
 				.build();

@@ -1,31 +1,31 @@
-type Post {
+type Post2 {
     id: ID!
     title: String!
     text: String!
     category: String
-    author: Author!
+    author2: Author2!
 }
 
-type Bidon {   
+type Bidon2 {   
     title: String!
     text: String!
     category: String
-    author: Author!
+    author2: Author2!
 }
 
-type Author {
+type Author2 {
     id: ID!
     name: String!
     thumbnail: String
-    posts: [Post]!
+    posts: [Post2]!
 }
 
 # The Root Query for the application
-type Query {
-    recentPosts(count: Int, offset: Int): [Post]!
-}
+#type Query {
+#   recentPosts(count: Int, offset: Int): [Post2]!
+#}
 
 # The Root Mutation for the application
-type Mutation {
-    writePost(title: String!, text: String!, category: String, author: String!) : Post!
-}
+#type Mutation {
+#    writePost(title: String!, text: String!, category: String, author2: String!) : Post2!
+#}

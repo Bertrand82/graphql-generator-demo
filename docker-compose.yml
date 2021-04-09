@@ -3,7 +3,7 @@ services:
   docker-mysql:
     restart: always
     container_name: docker-mysql
-    image: mysql
+    image: mysql/mysql-server:latest
     environment:
       MYSQL_DATABASE: databasebg3
       MYSQL_ROOT_PASSWORD: bg
@@ -21,12 +21,12 @@ services:
       retries: 10
   graphql-generator-demo:
     restart: on-failure
-    image: bertrand82/graphql_demo:v001
+    image: bertrand82/graphql_demo:latest
     build: ./
     expose:
       - "10222"
     ports:
-      - 8080:8080
+      - 80:80
     environment:
       WAIT_HOSTS: mysql:3306
     depends_on:

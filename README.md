@@ -20,6 +20,8 @@ graphql-generator:v000# graphql-generator-demo
 * >$docker run -p 80:80 graphql-generator:v000
 * ou bien en utilisant un profile par exemple:
 * >$docker run -p 8080:80 -e SPRING_PROFILE=dev graphql-generator:v000
+* Ou si il y a un acces a une bdd sur amazone:
+* >$docker run -p 8080:80 -e SPRING_PROFILE=aws graphql-generator:v000
 * Tester avec un navigateur sur port http://localhost:80 
 
 # Anomalie/Erreur au demarage:

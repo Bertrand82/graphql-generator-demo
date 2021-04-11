@@ -19,3 +19,7 @@ spring:
      properties:
         hibernate:
          globally_quoted_identifiers: true
+         character_set_connection: utf8mb4  
+         useSSL: false
+         allowPublicKeyRetrieval: true 
+

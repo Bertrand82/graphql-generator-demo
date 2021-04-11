@@ -2,7 +2,7 @@ spring:
   application:
     name: bg 
   profiles:
-    active: dev
+    active: aws
   data:
     rest:
       basePath: /api2   
@@ -25,7 +25,7 @@ spring:
   
 app:
   db: 
-    url: jdbc:mariadb://172.21.208.1:3306/databasebg5?user=root&password=bg&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mariadb://172.21.208.1:3306/bg1?user=root&password=bg
   ldap: 
     active: false  
     url: ldap://localhost:10389/dc=agr82,dc=com  
@@ -44,8 +44,8 @@ spring:
      show-sql: true    
   
 app:
-  db: 
-    url: jdbc:mariadb://database-1.csfuhimiizmi.eu-west-3.rds.amazonaws.com:3306?user=admin&password=Montpezat&useSSL=false&allowPublicKeyRetrieval=true
+  db:               
+    url: jdbc:mariadb://database-1.csfuhimiizmi.eu-west-3.rds.amazonaws.com:3306/bg1?user=admin&password=montpezatdequercy
   ldap: 
     active: false  
     url: ldap://localhost:10389/dc=agr82,dc=com  

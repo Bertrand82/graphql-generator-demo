@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -24,7 +25,8 @@ import bg.graphql.tool.GenerateModelRepositoryControllerFromGraphQL;
 @SpringBootApplication
 @EnableAutoConfiguration
 @EnableJpaRepositories(basePackages = { "bg.spring.generated"})
-@ComponentScan(basePackages = { "bg.spring.generated", "bg.springboot","bg.generated.graphql"})
+@ComponentScan(basePackages = { "bg.spring.generated", "bg.springboot","bg.generated.graphql","bg.spring.generated.pojo"})
+@EntityScan(basePackages = { "bg.spring.generated.pojo","bg.persistence.tool.common"}) 
 @EnableJpaAuditing
 public class Application implements WebSocketMessageBrokerConfigurer {
 
